@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Food Delivery</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Online Food Delivery</h1>
+        <p>Delicious food delivered to your doorstep!</p>
+    </header>
+    
+    <main>
+        <section id="featured">
+            <h2>Featured Dishes</h2>
+            <div class="dish">
+                <img src="{{ url_for('static', filename='dish1.jpg') }}" alt="Dish 1">
+                <h3>Special Pizza</h3>
+                <p>Delicious pizza with a variety of toppings.</p>
+                <button class="order-btn" onclick="addToCart('Special Pizza', 10.99)">Order Now</button>
+            </div>
+            <!-- Add more featured dishes here -->
+        </section>
+
+        <section id="menu">
+            <h2>Menu</h2>
+            <div class="dish">
+                <img src="{{ url_for('static', filename='dish2.jpg') }}" alt="Dish 2">
+                <h3>Pasta Alfredo</h3>
+                <p>Creamy Alfredo pasta with parmesan cheese.</p>
+                <button class="order-btn" onclick="addToCart('Pasta Alfredo', 8.99)">Order Now</button>
+            </div>
+            <!-- Add more items to the menu here -->
+        </section>
+
+        <section id="cart">
+            <h2>Cart</h2>
+            <ul id="cart-items">
+                <!-- Display selected items and total cost here -->
+            </ul>
+            <p>Total: $<span id="total">0.00</span></p>
+            <button class="order-btn" onclick="checkout()">Checkout</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Online Food Delivery</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
